@@ -6,8 +6,32 @@ import (
 )
 
 func main() {
-	fmt.Println(fecha_hora_minutos())
+	numeros := []int{1, 2, 3, 4}
+	numeros_volteados := make([]int, 0)
+	fmt.Println(len(numeros))
 
+	for x := 0; x < len(numeros); x++ {
+		numeros_volteados = append(numeros_volteados, numeros[len(numeros)-x-1])
+	}
+
+	fmt.Println(numeros_volteados)
+}
+
+func xd() {
+	var cantidad int
+
+	fmt.Scanln(&cantidad)
+
+	slice_numeros := make([]int, cantidad)
+
+	for i := 0; i < cantidad; i++ {
+		fmt.Println("Ingresa los datos:")
+		var numero int
+		fmt.Scanln(&numero)
+		slice_numeros[i] = numero
+	}
+
+	fmt.Println(slice_numeros)
 }
 
 func leer_numero(mensaje string) (int, error) {
